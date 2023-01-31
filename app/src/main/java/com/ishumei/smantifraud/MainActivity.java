@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
     TextView mInfo;
 
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void detect(View view) {
-        mInfo.setText(new SmAntiFraud().stringFromJNI());
+        SmAntiFraud saf = new SmAntiFraud();
+        mInfo.setText(String.format(Locale.US, "ROOT: %s\n\nHOOK: %s", saf.isRoot(), saf.isHook()));
     }
 }

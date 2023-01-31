@@ -11,5 +11,6 @@ public class SmAntiFraud {
      * A native method that is implemented by the 'smantifraud' native library,
      * which is packaged with this application.
      */
-    public native String stringFromJNI();
+    public native boolean isRoot();
+    public native boolean isHook();
 }
